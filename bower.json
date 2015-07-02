@@ -1,0 +1,21 @@
+{
+  "name": "take-city-hall",
+  "version": "0.0.0",
+  "homepage": "https://github.com/aliblackwell/take-city-hall",
+  "authors": [
+    "aliblackwell <aliblackwell@gmail.com>"
+  ],
+  "description": "Dependencies for Take City Hall",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "semantic-ui": "~2.0.0"
+  }
+}
