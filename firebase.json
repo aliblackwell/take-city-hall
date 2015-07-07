@@ -1,0 +1,9 @@
+{
+  "firebase": "take-city-hall",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
