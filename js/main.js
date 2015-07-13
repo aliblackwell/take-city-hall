@@ -6,30 +6,41 @@ $(function(){
   $('.detail-wrapper h4').hide();
 
   $('.circle').on('click', function(){
-    var introCopy = $('#sidebar').html();
     var section = $(this).children('a').attr('href');
     var selector = section.split('#')[1]
-    var copy = $('.circle.'+selector).clone();
-    $('.circle-wrapper').fadeOut('fast');
-    $('#sidebar').fadeOut('fast',function(){
-      $("#sidebar").html(copy)
-      $(section +', #sidebar').fadeIn('fast');
-      $('#get-involved').append('<img class="close" src="img/vote-cross.png">');
-      initClose(copy, introCopy);
-    });
+    var circle = $('.circle.'+selector).clone();
+    var blurb = $(section).html();
+    console.log(blurb)
+    $('body').append('<div class="lightbox"></div>');
+
+    $('.lightbox').hide().append(circle).append('<div class="blurb-wrap"></div>');
+    $('.blurb-wrap').append(blurb);
+    $('.lightbox').append('<img class="close" src="img/vote-cross.png">');
+    $('.lightbox').fadeIn('fast');
+
+    $('body').css('overflow-y','hidden');
+    initClose()
+
+
+    // $('.circle-wrapper').fadeOut('fast');
+    // $('#sidebar').fadeOut('fast',function(){
+    //   $("#sidebar").html(copy)
+    //   $(section +', #sidebar').fadeIn('fast');
+    //   $('#get-involved').append('<img class="close" src="img/vote-cross.png">');
+    //   initClose(copy, introCopy);
+    // });
 
     return false;
   })
 
 
-  function initClose(copy, introCopy) {
+  function initClose() {
     $('.close').on('click', function(){
       $(this).remove();
-      copy.remove();
+      $('.lightbox').remove();
       $('.circle-wrapper').show();
       $('.detail-wrapper article').hide();
-      $('#sidebar').html(introCopy);
-
+      $('body').css('overflow-y','auto');
     });
   }
 
