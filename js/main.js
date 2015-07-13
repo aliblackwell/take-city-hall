@@ -5,10 +5,12 @@ $(function(){
   $('.detail-wrapper article').hide();
   $('.detail-wrapper h4').hide();
 
-  $('.circle').on('click', function(){
+  $('.clickable-circle').on('click', function(){
     var section = $(this).children('a').attr('href');
     var selector = section.split('#')[1]
     var circle = $('.circle.'+selector).clone();
+    circle.unbind('click');
+
     var blurb = $(section).html();
     console.log(blurb)
     $('body').append('<div class="lightbox"></div>');
@@ -19,29 +21,22 @@ $(function(){
     $('.lightbox').fadeIn('fast');
 
     $('body').css('overflow-y','hidden');
-    initClose()
 
+    $('.close').on('click', function(){
+      initClose()
+    });
+    circle.on('click', function(){
+      initClose();
+    })
 
-    // $('.circle-wrapper').fadeOut('fast');
-    // $('#sidebar').fadeOut('fast',function(){
-    //   $("#sidebar").html(copy)
-    //   $(section +', #sidebar').fadeIn('fast');
-    //   $('#get-involved').append('<img class="close" src="img/vote-cross.png">');
-    //   initClose(copy, introCopy);
-    // });
-
-    return false;
   })
 
 
   function initClose() {
-    $('.close').on('click', function(){
-      $(this).remove();
-      $('.lightbox').remove();
-      $('.circle-wrapper').show();
-      $('.detail-wrapper article').hide();
-      $('body').css('overflow-y','auto');
-    });
+    $('.lightbox').remove();
+    $('.circle-wrapper').show();
+    $('.detail-wrapper article').hide();
+    $('body').css('overflow-y','auto');
   }
 
   function initFAQs() {

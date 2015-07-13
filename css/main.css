@@ -109,7 +109,7 @@ html, body {
 }
 
 header {
-    background: url(https://scontent-lhr3-1.xx.fbcdn.net/hphotos-xpt1/t31.0-8/11227547_648180421993648_7012710644067075688_o.jpg);
+    background: url(../img/green-demo.jpg);
     background-size: cover;
     height: 100%;
     overflow-x: hidden;
@@ -150,12 +150,7 @@ header section h3 {
     color: white;
 }
 
-header section h3, #call-to-action  {
-    -moz-transform: rotate(-2deg);
-    -ms-transform: rotate(-2deg);
-    -webkit-transform: rotate(-2deg);
-    transform: rotate(-2deg);
-}
+
 
 .cta-wrap {
     width: 100%;
@@ -300,21 +295,21 @@ p {
     position: relative;
     width: 100%;
     border-radius: 100%;
-    background: url(http://www.islingtongazette.co.uk/polopoly_fs/1.3991174.1426179312!/image/image.jpg_gen/derivatives/landscape_630/image.jpg);
+    background: url(../img/transport.jpg);
     background-size: cover;
 }
 
 .circle.housing {
-    background-image: url(http://hollowayexpress.co.uk/wp-content/uploads/2015/03/10888956_813381868705167_3487238571352688312_n.jpg);}
+    background-image: url(../img/housing.jpg);}
 
 .circle.fair-wages {
-    background-image: url(http://2.bp.blogspot.com/-2ZeKzvG9gPg/VQMj0IS986I/AAAAAAAAAIM/SzfGpAyqU7Y/s1600/10305326_633477100064796_7616130561722831483_n.jpg);}
+    background-image: url(../img/fair-wages.jpg);}
 
 .circle.air-pollution {
-    background-image: url(http://towerhamlets.greenparty.org.uk/resources/Tower%20Hamlets%20Green%20Party/Air%20Pollution%20Demo%202015/DSC00585.JPG);}
+    background-image: url(../img/air-pollution.jpg);}
 
 .circle.climate-change {
-    background-image: url(http://www.airportwatch.org.uk/wp-content/uploads/NO-at-Sipson-May-2008.jpg);}
+    background-image: url(../img/climate-change.jpg);}
 
 .circle:before{
     content: "";
@@ -376,12 +371,13 @@ p {
 
 .faqs dt.selected, article h4 {
     font-size: 1.5rem;
+    line-height: 1.5rem;
     -moz-transform: rotate(-1deg);
     -ms-transform: rotate(-1deg);
     -webkit-transform: rotate(-1deg);
     transform: rotate(-1deg);
     color: white;
-    padding: 0 0.25rem;
+    padding: 0.5rem 0.25rem;
     display: inline-block;
     background: rgb(0, 110, 54);
 }
@@ -398,6 +394,10 @@ dd p {
     margin-top: 1rem;
 }
 
+dd {
+  margin-left: 0;
+}
+
 .lightbox {
 
     position: fixed;
@@ -407,14 +407,14 @@ dd p {
     top: 0px;
     overflow-y: scroll;
     left: 0px;
-    padding-bottom: 4rem;
+    padding-bottom: 6rem;
     overflow-x: hidden;
 }
 
 .lightbox .circle {
     width: 120%;
     left: -10%;
-    top: -10rem;
+    top: -28%;
     position: fixed;
     margin: 0px auto;
     z-index: 9;
@@ -604,7 +604,6 @@ dd p {
         float: left;
         margin: 0px;
     }
-
 }
 
 @media print,
