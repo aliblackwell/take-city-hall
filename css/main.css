@@ -111,15 +111,14 @@ html, body {
 header {
     background: url(https://scontent-lhr3-1.xx.fbcdn.net/hphotos-xpt1/t31.0-8/11227547_648180421993648_7012710644067075688_o.jpg);
     background-size: cover;
-    height: 100vh;
-    display: table;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 header section {
-    display: table-cell;
-    vertical-align: middle;
-    text-align:center;
+    text-align:left;
     width: 100%;
+    height: 100%;
     background: rgba(255,255,255,0.5);
 }
 
@@ -127,9 +126,10 @@ header section h3 {
     display: inline-block;
     padding: 0.5rem;
     color: rgb(0, 106, 59);
-    font-size: 1.8rem;
+    font-size: 1.25rem;
     background: rgba(0, 110, 54, 0.75);
     color: white;
+    font-size: 1rem;
 }
 
 #call-to-action {
@@ -156,14 +156,25 @@ header section h3, #call-to-action  {
     transform: rotate(-2deg);
 }
 
+.cta-wrap {
+    width: 100%;
+    text-align: center;
+}
+
+#call-to-action {
+    text-align: center;
+    margin: 0px auto;
+    display: inline-block;
+}
+
 header h1 {
     margin-top: 0;
 }
 
 .logo {
-    position: absolute;
     top: 0.5rem;
     left: 0rem;
+    float: left;
     letter-spacing: 1px;
     -moz-transform: rotate(-5deg);
     -ms-transform: rotate(-5deg);
@@ -176,8 +187,7 @@ header h1 {
 .logo .third {
     font-weight: normal;
     margin: 0;
-    font-size: 5rem;
-    font-size: 2.9vw;
+    font-size: 1.8rem;
     padding: 0.5rem 1rem;
     position: relative;
     z-index: 10;
@@ -188,7 +198,7 @@ header h1 {
 .logo .first {
     color: rgb(0, 106, 59);
     background: white;
-    left: 4rem;
+    left: 0rem;
 
 }
 
@@ -197,25 +207,22 @@ header h1 {
     background: rgb(106,176,35);
     margin-top: -0.5rem;
     margin-bottom: -0.5rem;
-    padding: 0.5rem 2.2rem 0.5rem 4.2rem;
-    font-size: 7rem;
-    font-size: 5vw;
+    padding: 0.5rem 2.2rem 0.5rem 1.2rem;
+    font-size: 3.2rem;
     z-index: 9;
     text-align: center;
+    left: -0.5rem;
 }
 
 .logo .third {
     color: white;
     background: rgb(0, 110, 54);
     margin-top: 0rem;
-    left: 5rem;
+    left:-0.7rem;
 
 }
 
-.logo .first, .logo .third {
-    font-size: 1.6rem;
-    font-size: 2.25vw;
-}
+
 
 .main-nav {
     position: fixed;
@@ -223,8 +230,9 @@ header h1 {
     width: 100%;
     background: rgb(0, 110, 54);
     z-index: 999;
-
 }
+
+
 
 .main-nav ul, .main-nav li {
     list-style: none;
@@ -244,13 +252,9 @@ header h1 {
     display: block;
     width: 100%;
     color: white;
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding: 0.25rem 0rem;
     text-decoration: none;
-}
-
-.what, .why, .how, .faqs {
-    padding-bottom: 15rem;
 }
 
 .content section {
@@ -268,7 +272,8 @@ header h1 {
 }
 
 .grid-container h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin: 2rem 0 1rem 0;
     -moz-transform: rotate(-2deg);
     -ms-transform: rotate(-2deg);
     -webkit-transform: rotate(-2deg);
@@ -287,6 +292,7 @@ img {
 p {
     font-size: 1rem;
     line-height: 1.5;
+    margin-top: 0;
 }
 
 .circle {
@@ -339,7 +345,6 @@ p {
 .circle a .content h3 {
     position: absolute;
     font-size: 3rem;
-    font-size: 3vw;
     height: 60px;
     top: 50%;
     margin-top: -30px;
@@ -354,8 +359,8 @@ p {
 
 .close {
   position: absolute;
-  top: 2.5rem;
-  right: 3rem;
+  top: 5.3rem;
+  right: -0.8rem;
   width: 50px;
   cursor: pointer;
 }
@@ -363,12 +368,14 @@ p {
 /* FAQs */
 
 .faqs dt {
-    font-size: 2.5rem;
     cursor: pointer;
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1.8rem;
 }
 
 .faqs dt.selected, article h4 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     -moz-transform: rotate(-1deg);
     -ms-transform: rotate(-1deg);
     -webkit-transform: rotate(-1deg);
@@ -379,7 +386,17 @@ p {
     background: rgb(0, 110, 54);
 }
 
+.what, .why, .how, .faqs {
+    margin-bottom: 1rem;
+}
 
+.faqs {
+    padding-bottom: 5rem;
+}
+
+dd p {
+    margin-top: 1rem;
+}
 
 /* ==========================================================================
    Helper classes
@@ -390,6 +407,10 @@ p {
  */
 
 .hidden {
+    display: none !important;
+}
+
+.blanker {
     display: none !important;
 }
 
@@ -456,13 +477,97 @@ p {
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
+   Media Queries for Responsive Design.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (min-width: 500px) {
+
     /* Style adjustments for viewports that meet the condition */
+
+    header {
+        height: 100vh;
+        display: table;
+    }
+
+    header section {
+        display: table-cell;
+        vertical-align: middle;
+        text-align:center;
+    }
+
+    .logo {
+        position: absolute;
+    }
+
+
+    .logo .first,
+    .logo .second,
+    .logo .third {
+        font-size: 5rem;
+        font-size: 2.9vw;
+        padding: 0.5rem 1rem;
+    }
+
+    .logo .first {
+        left: 4rem;
+    }
+
+    .logo .second {
+        margin-top: -0.5rem;
+        margin-bottom: -0.5rem;
+        padding: 0.5rem 2.2rem 0.5rem 4.2rem;
+        font-size: 7rem;
+        font-size: 5vw;
+    }
+
+    .logo .third {
+        margin-top: 0rem;
+        left: 5rem;
+
+    }
+
+    .logo .first, .logo .third {
+        font-size: 1.6rem;
+        font-size: 2.25vw;
+    }
+
+    header section h3 {
+        font-size: 1.8rem;
+    }
+
+    header section h3 span {
+        display: block;
+    }
+    .circle a .content h3 {
+        font-size: 3vw;
+    }
+
+    .what, .why, .how, .faqs {
+        padding-bottom: 15rem;
+        margin-bottom: 1rem;
+    }
+
+    .faqs dt.selected, article h4, .faqs dt {
+        font-size: 2.5rem;
+        line-height: 3.4rem;
+    }
+
+    .main-nav li a {
+        font-size: 2.5rem;
+    }
+
+    .grid-container h2 {
+        font-size: 2.5rem;
+    }
+
+    .blanker {
+        display: block !important;
+    }
+    .close {
+        top: 2.5rem;
+        right: 3rem;
+    }
+
 }
 
 @media print,
